@@ -20,3 +20,6 @@ page = requests.get(url, headers=headers)
 
 soup = BeautifulSoup(page.content, 'html.parser')
 
+countainer = soup.findAll("div", {"class": "lb-total"})
+
+print(countainer)
