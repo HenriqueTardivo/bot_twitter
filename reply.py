@@ -15,7 +15,7 @@ numero = 30
 for tweet in tweepy.Cursor(api.search, search).items(numero):
     try:
         print("nome do usuario: @" + tweet.user.screen_name)
-        api.update_status("concordo", in_reply_to_status_id=tweet)
+        api.update_status("@" + tweet.user.screen_name + " concordo", in_reply_to_status_id=tweet.id)
         print("tuite enviado corretamente")
         time.sleep(30)
     except tweepy.TweepError as e:
